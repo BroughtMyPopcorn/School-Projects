@@ -1,3 +1,4 @@
 Made a program that allows the user to enter and search for apps
 -Data struture used: Red-Black Tree with a Binary Search Tree contained within the nodes of the Red-Black.
 -Used dynamic binding and operator overloading
+-Used a file read in for intialization
