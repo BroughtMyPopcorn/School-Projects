@@ -1,0 +1,8 @@
+biz:Stocks:An app for stocks:It's a good app:2 hours ago:0:100
+social:Facebook:A social media app:Why are there ads on cat food after I talked to my mom about buying some??:1 hour ago:0:20
+games:Fortnite:Mobile version of Fortnite:Why is my phone on fire when I open it?:2 days ago:0:9999
+
+
+
+
+
