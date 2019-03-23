@@ -1,0 +1,30 @@
+pepsi,1.45,hi
+coffee
+water
+salad
+hashbrowns
+fries
+mcchicken
+big mac
+spicy chicken
+root beer
+sprite
+mt dew
+cole slaw
+biscuits
+mashed potatoes
+chicken tender
+bonafide chicken
+chicken wrap
+root beer
+dr pepper
+water
+potato wedges
+pot pie
+beans
+sandwhich
+bucket meal
+pop chicken
+McDonalds
+KFC
+Popeyes
