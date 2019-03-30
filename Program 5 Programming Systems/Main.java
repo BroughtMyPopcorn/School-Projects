@@ -1,6 +1,5 @@
 /*
 Nelson Wong
-PSU ID 923756571
 This program allows for the insertion, search and removal of menu items
 Restaurants is an Abstract base class that has mcdonalds, popeyes, and kfc as it's children
 There is a binary search tree of Restaurants, and each restaurant has a object of a MenuBST
