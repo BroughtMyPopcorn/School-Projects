@@ -5,7 +5,7 @@ For this program, it allows the user to manipulate questions that are inserted i
 The rtti is in the node constructor, dynamic binding in for insert
 
 */
-#include "high.h"
+#include "table.h"
 
 int main(){
     bool go = true;
