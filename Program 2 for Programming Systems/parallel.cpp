@@ -1,5 +1,6 @@
 #include "node.h"
-
+#include "questions.h"
+#include "parallel.h"
 
 parallel::parallel(){
     cores = 0;

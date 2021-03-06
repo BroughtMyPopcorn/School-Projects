@@ -1,5 +1,5 @@
 #include "table.h"
-
+#include "questions.h"
 
 list::list(){
 

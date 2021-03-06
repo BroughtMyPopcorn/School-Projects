@@ -1,6 +1,5 @@
 #include "table.h"
 
-
 table::table(){
 
     index = new list *[NUM];// make a new array with 3 elements

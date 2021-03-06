@@ -1,4 +1,5 @@
 #include "node.h"
+#include "questions.h"
 
 //constructor for base class
 questions::questions(){
