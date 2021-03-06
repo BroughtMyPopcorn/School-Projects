@@ -1,5 +1,5 @@
 #include "node.h"
-
+#include "algos.h"
 
 algos::algos(){
     bigO = NULL;

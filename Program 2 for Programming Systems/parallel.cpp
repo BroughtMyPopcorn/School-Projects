@@ -1,5 +1,5 @@
 #include "node.h"
-
+#include "parallel.h"
 
 parallel::parallel(){
     cores = 0;

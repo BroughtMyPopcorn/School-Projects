@@ -1,5 +1,5 @@
 #include "node.h"
-
+#include "threads.h"
 
 threads::threads(){
     tc = 0; 

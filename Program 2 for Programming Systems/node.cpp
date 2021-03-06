@@ -1,4 +1,7 @@
 #include "node.h"
+#include "algos.h"
+#include "threads.h"
+#include "parallel.h"
 
 //node constructor to set data
 node::node(){
