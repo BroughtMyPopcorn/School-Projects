@@ -1,3 +1,8 @@
+#ifndef QUESTIONS_H
+#define QUESTIONS_H
+#include "questions.h"
+#endif
+
 //questions for parallel programming
 class parallel: public questions
 {

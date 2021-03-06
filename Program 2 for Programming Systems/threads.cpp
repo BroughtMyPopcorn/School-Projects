@@ -1,5 +1,4 @@
 #include "node.h"
-#include "questions.h"
 #include "threads.h"
 
 threads::threads(){

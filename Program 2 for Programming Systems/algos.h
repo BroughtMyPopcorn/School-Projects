@@ -1,3 +1,7 @@
+#ifndef QUESTIONS_H
+#define QUESTIONS_H
+#include "questions.h"
+#endif
 
 //questions for algorithms
 class algos: public questions
