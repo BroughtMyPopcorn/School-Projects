@@ -1,22 +1,27 @@
-//the list class manages the insertion of nodes
+/* 
+
+Author: Nelson Wong
+This file contains the definitions for the list class, whose primary
+purpose is to manage the insertion of nodes
+
+*/
+
+
 class list
 {
     public:
         list();
         ~list();
-      //  void insertw(tabl); //wrapper for insert
         void display(); //wrapper for display funct
-        void remove(); //remove question
         void insert(int);
         void search(int ref); //search function 
-        void test();
-         int delete_item(int del);
+        int deleteItem(int del);
 
     protected:
-        int delete_item(node*& head, int del);
-         node* head; //contains a node for insertion
-        void display(node* head);
-        void remove(node*& head);
-       // node* search(node* head); //search function 
-        int traverse(node* head, int ref);
+        node* head_; //contains a node for insertion
+
+        int deleteItem(node*& head_, int del);
+        void display(node* head_);
+        void remove(node*& head_);
+        int traverse(node* head_, int ref);
 };

@@ -14,5 +14,5 @@ class algos: public questions
         virtual void display();
         void readin();
     protected:
-        char* bigO; //char * for algorithm questions
+        char* big_o_; //char * for algorithm questions
 };

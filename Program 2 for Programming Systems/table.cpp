@@ -34,7 +34,7 @@ int table::edit(){
     for(int i = 0; i<NUM;i++){
         if(index[i]){
             index[i]->search(toedit);
-            int catchh = index[i]->delete_item(toedit);
+            int catchh = index[i]->deleteItem(toedit);
             if(catchh == 1){
                 pick();
             }
@@ -50,7 +50,7 @@ int table::remove_w(){
     cin.ignore();
     for(int i = 0; i<NUM;i++){
         if(index[i]){
-            index[i]->delete_item(del);
+            index[i]->deleteItem(del);
         }
     }
 
@@ -93,7 +93,7 @@ void table::pick(){
 void table::display(){
 
     int pick = 0;
-    // if(!head) return;
+    // if(!head_) return;
     cout<<"Which type of question do you want to display"<<endl;
     cout<<"1 for parallel programming"<<endl;
     cout<<"2 for threads"<<endl;

@@ -1,3 +1,7 @@
+Refactored using the Google C++ style guide, found below:
+https://google.github.io/styleguide/cppguide.html
+
+
 Made a program that allows the user to add, edit, and delete questions from set questions.
 -Data structure was an array of doubly linked lists.
 -Used dynamic binding and run-time type identification.
