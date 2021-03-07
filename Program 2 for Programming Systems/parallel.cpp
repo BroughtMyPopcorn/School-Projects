@@ -5,21 +5,16 @@ parallel::parallel(){
     cores = 0;
 }
 
-parallel::~parallel(){
-}
+parallel::~parallel() {}
 
 //copy constructor
 parallel::parallel(const parallel & src){
-
     cores = src.cores;
-
 }
 
-//copies the parallel data members 
-parallel::parallel(int new_subject, char* new_info, char* new_ds, int new_difficulty, int new_cores, int new_reference): questions(new_subject, new_info, new_ds, new_difficulty, new_reference)
-{
-    cores = new_cores;
-}
+/* Fully utilize the initialization list */
+parallel::parallel(int new_subject, char* new_info, char* new_ds, int new_difficulty, int new_cores, int new_reference): 
+    questions(new_subject, new_info, new_ds, new_difficulty, new_reference), cores(new_cores) {}
 
 //display the contents for parallel 
 void parallel::display(){
@@ -51,8 +46,9 @@ void parallel::readin(){
 
     cout<<"Enter in the diffculty out of 5"<<endl;
     cin>>difficulty;
+    cin.ignore();       // Added in the safety measure for cin
 
     cout<<"How many cores does it have"<<endl;
     cin>>cores;
-
+    cin.ignore();       // Added in the safety measure for cin
 }

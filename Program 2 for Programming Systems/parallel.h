@@ -15,6 +15,4 @@ class parallel: public questions
         void readin();
     protected:
         int cores; //user inserts how many cores are used 
-
-
 };
