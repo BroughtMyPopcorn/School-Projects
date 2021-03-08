@@ -28,7 +28,7 @@ void list::insert(int choice){
     //if there's not a list already, initialize one 
     if(!head){
         head = new node;
-        head->setData(choice);
+        head->setQuestion(choice);
         head->setNext(NULL);
         head->setPrev(NULL);
     }
@@ -36,7 +36,7 @@ void list::insert(int choice){
     else{
         node * temp = head;
         head = new node;
-        head->setData(choice);
+        head->setQuestion(choice);
         head->setNext(temp);
         temp->setPrev(head);
         // temp->setNext(NULL);
@@ -56,7 +56,7 @@ int list::delete_item(node*& head, int del){
     /* table* ptr;
        int del = ptr->getdel();
        */
-    if(head->getData()->getReference() == del){
+    if(head->getQuestionData()->getReference() == del){
         node* temp = head->getNext();
         node* temp2 = head->getPrev();
         delete head;
@@ -79,7 +79,7 @@ void list::display(){
 void list::display(node* head){
     if(!head) return;
 
-    head->display();        // calls node display
+    head->displayQuestions();        // calls node display
 
     return display(head->getNext());
 }
@@ -96,8 +96,8 @@ int list::traverse(node* head, int ref){
        table* ptr;
        int ref = ptr->getref();
        */
-    if(head->getData()->getReference()== ref){
-        head->display();
+    if(head->getQuestionData()->getReference()== ref){
+        head->displayQuestions();
         return 1;
     }
 

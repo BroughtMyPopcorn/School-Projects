@@ -47,9 +47,9 @@ node*& node::getNext(){
 }
 
 
-void node::setNext(node* todata){
+void node::setNext(node* nextTopic){
 
-    next = todata;
+    next = nextTopic;
 }
 
 node*& node::getPrev(){
@@ -57,20 +57,20 @@ node*& node::getPrev(){
     return prev;
 }
 
-void node::setPrev(node* todata){
+void node::setPrev(node* prevTopic){
 
-    prev = todata;
+    prev = prevTopic;
 }
 
-questions* node::getData(){
+questions* node::getQuestionData(){
     return data;
 }
 
-void node::display(){
+void node::displayQuestions(){
     
     data->display();
 }
-void node::setData(int choice){
+void node::setQuestion(int choice){
 
     if(choice == 1){
         data = new parallel;
