@@ -16,7 +16,7 @@ parallel::parallel(const parallel & src){
 parallel::parallel(int new_subject, char* new_info, char* new_ds, int new_difficulty, int new_cores, int new_reference): 
     questions(new_subject, new_info, new_ds, new_difficulty, new_reference), cores(new_cores) {}
 
-//display the contents for parallel 
+/* Displaying the data members of the class */
 void parallel::display(){
     cout<<"For parallel programming"<<endl;
     cout<<"The question is: "<<info<<endl;
@@ -26,9 +26,8 @@ void parallel::display(){
     cout<<"The reference number is: "<<reference<<endl;
 }
 
-//allows the user to insert the data 
+/* Read in data for the data members of the class */
 void parallel::readin(){
-
     cout<<"The subject is parallel programming"<<endl;
     cout<<"Enter a number to associate the question with"<<endl;
     cin>>reference;
