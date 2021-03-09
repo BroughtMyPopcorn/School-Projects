@@ -20,7 +20,7 @@ questions::~questions(){
 questions::questions(const questions & src){
     subject = src.subject;
     info = new char [strlen(src.info)+1];
-    strcpy(info, src.info);                
+    strcpy(info, src.info);                // There might be vulnerability here for overflow
     ds = new char [strlen(src.ds)+1];
     strcpy(ds,src.ds);                      //Tu added in this part. Not sure if needed yet
     difficulty = src.difficulty;

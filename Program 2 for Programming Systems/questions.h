@@ -1,3 +1,5 @@
+#include <string.h>
+
 /*  Base class that act as hub for other derived classes.
     Any virtual functions within this class must be implement by inherited classes */
 class questions
@@ -7,7 +9,7 @@ class questions
         questions(int new_subject, char *new_info, char *new_ds, int new_difficulty, int new_reference); //copies the data members
         questions(const questions &src);                                                                 //copies into a new obj
         virtual ~questions();
-        virtual void display() = 0;     // Any children must implement this function
+        virtual void display() const = 0;     // Any children must implement this function
         virtual void readin() = 0;      // Any children must implement this function
         int getReference();
     protected:

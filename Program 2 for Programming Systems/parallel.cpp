@@ -17,7 +17,7 @@ parallel::parallel(int new_subject, char* new_info, char* new_ds, int new_diffic
     questions(new_subject, new_info, new_ds, new_difficulty, new_reference), cores(new_cores) {}
 
 /* Displaying the data members of the class */
-void parallel::display(){
+void parallel::display() const {
     cout<<"For parallel programming"<<endl;
     cout<<"The question is: "<<info<<endl;
     cout<<"The data structure: "<<ds<<endl;
@@ -43,7 +43,7 @@ void parallel::readin(){
     cin.get(ds, 1000, '\n');
     cin.ignore(1000, '\n');
 
-    cout<<"Enter in the diffculty out of 5"<<endl;
+    cout<<"Enter in the difficulty out of 5"<<endl;
     cin>>difficulty;
     cin.ignore();       // Added in the safety measure for cin
 
