@@ -5,24 +5,19 @@ parallel::parallel(){
     cores = 0;
 }
 
-parallel::~parallel(){
-}
+parallel::~parallel() {}
 
 //copy constructor
 parallel::parallel(const parallel & src){
-
     cores = src.cores;
-
 }
 
-//copies the parallel data members 
-parallel::parallel(int new_subject, char* new_info, char* new_ds, int new_difficulty, int new_cores, int new_reference): questions(new_subject, new_info, new_ds, new_difficulty, new_reference)
-{
-    cores = new_cores;
-}
+/* Fully utilize the initialization list */
+parallel::parallel(int new_subject, char* new_info, char* new_ds, int new_difficulty, int new_cores, int new_reference): 
+    questions(new_subject, new_info, new_ds, new_difficulty, new_reference), cores(new_cores) {}
 
-//display the contents for parallel 
-void parallel::display(){
+/* Displaying the data members of the class */
+void parallel::display() const {
     cout<<"For parallel programming"<<endl;
     cout<<"The question is: "<<info<<endl;
     cout<<"The data structure: "<<ds<<endl;
@@ -31,9 +26,8 @@ void parallel::display(){
     cout<<"The reference number is: "<<reference<<endl;
 }
 
-//allows the user to insert the data 
+/* Read in data for the data members of the class */
 void parallel::readin(){
-
     cout<<"The subject is parallel programming"<<endl;
     cout<<"Enter a number to associate the question with"<<endl;
     cin>>reference;
@@ -49,10 +43,11 @@ void parallel::readin(){
     cin.get(ds, 1000, '\n');
     cin.ignore(1000, '\n');
 
-    cout<<"Enter in the diffculty out of 5"<<endl;
+    cout<<"Enter in the difficulty out of 5"<<endl;
     cin>>difficulty;
+    cin.ignore();       // Added in the safety measure for cin
 
     cout<<"How many cores does it have"<<endl;
     cin>>cores;
-
+    cin.ignore();       // Added in the safety measure for cin
 }
