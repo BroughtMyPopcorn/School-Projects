@@ -20,9 +20,9 @@ questions::~questions(){
 questions::questions(const questions & src){
     subject = src.subject;
     info = new char [strlen(src.info)+1];
-    strcpy(info, src.info);                // There might be vulnerability here for overflow
+    strncpy(info, src.info,strlen(info));                // There might be vulnerability here for overflow
     ds = new char [strlen(src.ds)+1];
-    strcpy(ds,src.ds);                      //Tu added in this part. Not sure if needed yet
+    strncpy(ds,src.ds, strlen(ds));                      //Tu added in this part. Not sure if needed yet
     difficulty = src.difficulty;
     reference = src.reference;
 }
@@ -31,9 +31,9 @@ questions::questions(const questions & src){
 questions::questions(int new_subject, char* new_info, char* new_ds, int new_diffculty, int new_reference){
     subject = new_subject;
     info = new char [strlen(new_info)+1];
-    strcpy(info, new_info);
+    strncpy(info, new_info, strlen(info));
     ds = new char [strlen(new_ds)+1];
-    strcpy(ds, new_ds);                     //Tu added in this part
+    strncpy(ds, new_ds, strlen(ds));                     //Tu added in this part
     difficulty = new_diffculty;
     reference = new_reference;
 }
