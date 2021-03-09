@@ -14,22 +14,14 @@ class table
     public:
         table();
         ~table();
-        // void insert();
-        void display();
-        void pick();//picks which question to insert
-        void search();
-       // int getref();
-        int getdel();
-        int remove_w();
-        int edit();
-    protected: 
+        void display(); //calls display on selected list
+        void pick(); //picks which question to insert
+        int search(); //searches lists for reference number to display
+        int remove(); //searches lists for reference number to remove
+        int edit(); //searches lists for reference number to replace
+    private:
         class list** index; //double ptr to dynamically allocate the array
-       // int ref;
-       // int del; //user inputs which number to delete
-        void search_w(int &arrIndex);
         int arrIndex; //index traverser for arr
-        //int choice; //allows user to pick which question to insert
-        //int dis; //int that allows user to choose which type of question to display
 };
 
 
