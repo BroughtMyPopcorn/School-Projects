@@ -1,58 +1,61 @@
 #include "node.h"
 #include "parallel.h"
 
-parallel::parallel(){
+parallel::parallel()
+{
     cores = 0;
 }
 
-parallel::~parallel(){
+parallel::~parallel()
+{
 }
 
 //copy constructor
-parallel::parallel(const parallel & src){
+parallel::parallel(const parallel &src)
+{
 
     cores = src.cores;
-
 }
 
-//copies the parallel data members 
-parallel::parallel(int new_subject, char* new_info, char* new_ds, int new_difficulty, int new_cores, int new_reference): questions(new_subject, new_info, new_ds, new_difficulty, new_reference)
+//copies the parallel data members
+parallel::parallel(int new_subject, char *new_info, char *new_ds, int new_difficulty, int new_cores, int new_reference) : questions(new_subject, new_info, new_ds, new_difficulty, new_reference)
 {
     cores = new_cores;
 }
 
-//display the contents for parallel 
-void parallel::display(){
-    cout<<"For parallel programming"<<endl;
-    cout<<"The question is: "<<info<<endl;
-    cout<<"The data structure: "<<ds<<endl;
-    cout<<"The difficulty /5 is: "<<difficulty<<endl;
-    cout<<"It has "<<cores<<" cores"<<endl;
-    cout<<"The reference number is: "<<reference<<endl;
+//display the contents for parallel
+void parallel::display()
+{
+    std::cout << "For parallel programming" << std::endl;
+    std::cout << "The question is: " << info << std::endl;
+    std::cout << "The data structure: " << ds << std::endl;
+    std::cout << "The difficulty /5 is: " << difficulty << std::endl;
+    std::cout << "It has " << cores << " cores" << std::endl;
+    std::cout << "The reference number is: " << reference << std::endl;
 }
 
-//allows the user to insert the data 
-void parallel::readin(){
+//allows the user to insert the data
+void parallel::readin()
+{
 
-    cout<<"The subject is parallel programming"<<endl;
-    cout<<"Enter a number to associate the question with"<<endl;
-    cin>>reference;
-    cin.ignore();
+    std::cout << "The subject is parallel programming" << std::endl;
+    std::cout << "Enter a number to associate the question with" << std::endl;
+    std::cin >> reference;
+    std::cin.ignore();
 
-    cout<<"Enter the question"<<endl;
+    std::cout << "Enter the question" << std::endl;
     info = new char[1000];
-    cin.get(info, 1000, '\n');
-    cin.ignore(1000,'\n');
+    std::cin.get(info, 1000, '\n');
+    std::cin.ignore(1000, '\n');
 
-    cout<<"Enter the data structure that would work the best"<<endl;
+    std::cout << "Enter the data structure that would work the best" << std::endl;
     ds = new char[1000];
-    cin.get(ds, 1000, '\n');
-    cin.ignore(1000, '\n');
+    std::cin.get(ds, 1000, '\n');
+    std::cin.ignore(1000, '\n');
 
-    cout<<"Enter in the diffculty out of 5"<<endl;
-    cin>>difficulty;
+    std::cout << "Enter in the diffculty out of 5" << std::endl;
+    std::cin >> difficulty;
 
-    cout<<"How many cores does it have"<<endl;
-    cin>>cores;
-
+    std::cout << "How many cores does it have" << std::endl;
+    std::cin >> cores;
 }

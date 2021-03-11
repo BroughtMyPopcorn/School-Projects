@@ -1,57 +1,59 @@
 #include "node.h"
 #include "threads.h"
 
-threads::threads(){
-    tc = 0; 
+threads::threads()
+{
+    tc = 0;
 }
 
-threads::~threads(){
+threads::~threads()
+{
 }
 
-threads::threads(int new_subject, char* new_info, char* new_ds, int new_difficulty, int new_reference, int new_tc): questions(new_subject, new_info, new_ds, new_difficulty, new_reference)
+threads::threads(int new_subject, char *new_info, char *new_ds, int new_difficulty, int new_reference, int new_tc) : questions(new_subject, new_info, new_ds, new_difficulty, new_reference)
 {
     tc = new_tc;
 }
 
-threads::threads(const threads & src){
+threads::threads(const threads &src)
+{
 
     tc = src.tc;
-
 }
 
-void threads::display(){
-    cout<<"For threads"<<endl;
-    cout<<"The question is: "<<info<<endl;
-    cout<<"The data structure: "<<ds<<endl;
-    cout<<"The difficulty /5 is: "<<difficulty<<endl;
-    cout<<"The thread count is: "<<endl;
-    cout<<"The reference number is: "<<reference<<endl;
-
+void threads::display()
+{
+    std::cout << "For threads" << std::endl;
+    std::cout << "The question is: " << info << std::endl;
+    std::cout << "The data structure: " << ds << std::endl;
+    std::cout << "The difficulty /5 is: " << difficulty << std::endl;
+    std::cout << "The thread count is: " << std::endl;
+    std::cout << "The reference number is: " << reference << std::endl;
 }
 
-void threads::readin(){
-    cout<<"The subject is threads"<<endl;
-   
-    cout<<"Enter a number to associate the question with"<<endl;
-    cin>>reference;
-    cin.ignore();
+void threads::readin()
+{
+    std::cout << "The subject is threads" << std::endl;
 
-    cout<<"Enter the question"<<endl;
+    std::cout << "Enter a number to associate the question with" << std::endl;
+    std::cin >> reference;
+    std::cin.ignore();
+
+    std::cout << "Enter the question" << std::endl;
     info = new char[1000];
-    cin.get(info, 1000, '\n');
-    cin.ignore(1000,'\n');
+    std::cin.get(info, 1000, '\n');
+    std::cin.ignore(1000, '\n');
 
-    cout<<"Enter the data structure that would work the best"<<endl;
+    std::cout << "Enter the data structure that would work the best" << std::endl;
     ds = new char[1000];
-    cin.get(ds, 1000, '\n');
-    cin.ignore(1000, '\n');
+    std::cin.get(ds, 1000, '\n');
+    std::cin.ignore(1000, '\n');
 
-    cout<<"Enter in the diffculty out of 5"<<endl;
-    cin>>difficulty;
-    cin.ignore();
+    std::cout << "Enter in the diffculty out of 5" << std::endl;
+    std::cin >> difficulty;
+    std::cin.ignore();
 
-    cout<<"How many threads does it have?"<<endl;
-    cin>>tc;
-    cin.ignore();
+    std::cout << "How many threads does it have?" << std::endl;
+    std::cin >> tc;
+    std::cin.ignore();
 }
-

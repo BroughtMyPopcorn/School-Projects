@@ -3,7 +3,6 @@
 #include <fstream>
 #include <iostream>
 
-using namespace std;
 //manages the nodes of the doubly linked list
 class node {
 public:

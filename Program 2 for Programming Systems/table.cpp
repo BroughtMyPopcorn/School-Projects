@@ -1,41 +1,51 @@
 #include "table.h"
 
-table::table(){
+table::table()
+{
 
-    index = new list *[NUM];// make a new array with 3 elements
+    index = new list *[NUM]; // make a new array with 3 elements
 
-    for(int i=0;i<NUM; i++){
+    for (int i = 0; i < NUM; i++)
+    {
         index[i] = NULL;
     }
     // ref = 0;
     arrIndex = 0;
 }
 
-table::~table(){
+table::~table()
+{
 
     //deallocates the array
-    for(int i=0; i<NUM;i++){
-        if(index[i]){
+    for (int i = 0; i < NUM; i++)
+    {
+        if (index[i])
+        {
             delete index[i];
             index[i] = NULL;
         }
     }
 
-    if(index){
-        delete [] index;
+    if (index)
+    {
+        delete[] index;
     }
 }
 
-int table::edit(){
+int table::edit()
+{
     int toedit;
-    cout<<"enter in the question ref to edit"<<endl;
-    cin>>toedit;
+    std::cout << "enter in the question ref to edit" << std::endl;
+    std::cin >> toedit;
 
-    for(int i = 0; i<NUM;i++){
-        if(index[i]){
+    for (int i = 0; i < NUM; i++)
+    {
+        if (index[i])
+        {
             index[i]->search(toedit);
             int catchh = index[i]->delete_item(toedit);
-            if(catchh == 1){
+            if (catchh == 1)
+            {
                 pick();
             }
         }
@@ -43,13 +53,16 @@ int table::edit(){
     return 0;
 }
 
-int table::remove_w(){
+int table::remove_w()
+{
     int del;
-    cout<<"enter in a reference num to delete: "<<endl;
-    cin>>del;
-    cin.ignore();
-    for(int i = 0; i<NUM;i++){
-        if(index[i]){
+    std::cout << "enter in a reference num to delete: " << std::endl;
+    std::cin >> del;
+    std::cin.ignore();
+    for (int i = 0; i < NUM; i++)
+    {
+        if (index[i])
+        {
             index[i]->delete_item(del);
         }
     }
@@ -57,16 +70,17 @@ int table::remove_w(){
     return 1;
 }
 
+void table::search()
+{
+    int ref = 0;
+    std::cout << "Which reference number do you want to search for" << std::endl;
+    std::cin >> ref;
+    std::cin.ignore();
 
-
-void table::search(){
-    int ref =0;
-    cout<<"Which reference number do you want to search for"<<endl;
-    cin>>ref;
-    cin.ignore();
-
-    for(int i = 0; i<NUM;i++){
-        if(index[i]){
+    for (int i = 0; i < NUM; i++)
+    {
+        if (index[i])
+        {
             index[i]->search(ref);
         }
     }
@@ -74,41 +88,45 @@ void table::search(){
     return;
 }
 
-void table::pick(){
+void table::pick()
+{
     int choice;
-    cout<<"what type of question do you want to add?"<<endl;
-    cout<<"Enter 1 for parallel programming"<<endl;
-    cout<<"Enter 2 for threads"<<endl;
-    cout<<"Enter 3 for algorithms"<<endl;
-    cin>>choice;
-    cin.ignore(100, '\n');
-    if(index[choice-1] == NULL){
-        index[choice-1] = new list();
+    std::cout << "what type of question do you want to add?" << std::endl;
+    std::cout << "Enter 1 for parallel programming" << std::endl;
+    std::cout << "Enter 2 for threads" << std::endl;
+    std::cout << "Enter 3 for algorithms" << std::endl;
+    std::cin >> choice;
+    std::cin.ignore(100, '\n');
+    if (index[choice - 1] == NULL)
+    {
+        index[choice - 1] = new list();
     }
 
-    index[choice-1]->insert(choice);
+    index[choice - 1]->insert(choice);
 }
 
-
-void table::display(){
+void table::display()
+{
 
     int pick = 0;
     // if(!head) return;
-    cout<<"Which type of question do you want to display"<<endl;
-    cout<<"1 for parallel programming"<<endl;
-    cout<<"2 for threads"<<endl;
-    cout<<"3 for algorithms"<<endl;
+    std::cout << "Which type of question do you want to display" << std::endl;
+    std::cout << "1 for parallel programming" << std::endl;
+    std::cout << "2 for threads" << std::endl;
+    std::cout << "3 for algorithms" << std::endl;
 
-    cin>>pick;
-    cin.ignore(100, '\n');
-    if(pick == 1 && index[0]){
+    std::cin >> pick;
+    std::cin.ignore(100, '\n');
+    if (pick == 1 && index[0])
+    {
         index[0]->display();
     }
-    else if(pick == 2 && index[1]){
+    else if (pick == 2 && index[1])
+    {
         index[1]->display();
     }
-    else if(pick == 3 && index[2]){
+    else if (pick == 3 && index[2])
+    {
         index[2]->display();
     }
-
 }
