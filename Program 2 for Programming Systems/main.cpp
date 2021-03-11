@@ -9,46 +9,48 @@ The rtti is in the node constructor, dynamic binding in for insert
 
 int main()
 {
+    // For the do while menu selection 
     bool go = true;
-    int cont = 0;
+    int actionNumber = 0;
     table *obj = new table;
     do
     {
-        std::cout << "1 for insert new question" << std::endl;
-        std::cout << "2 for search for an item" << std::endl;
+        std::cout << "Enter the corresponding number for the action" << std::endl;
+        std::cout << "1 to insert new question" << std::endl;
+        std::cout << "2 to search for an item" << std::endl;
         std::cout << "3 to remove a question" << std::endl;
         std::cout << "4 to edit a question" << std::endl;
         std::cout << "5 to display questions" << std::endl;
-        std::cout << "6 to end the prog" << std::endl;
-        std::cin >> cont;
+        std::cout << "6 to end the program" << std::endl;
+        std::cin >> actionNumber;
         std::cin.ignore();
 
-        if (cont == 1)
+        if (actionNumber == 1)
         {
             obj->pick();
         }
 
-        if (cont == 2)
+        if (actionNumber == 2)
         {
             obj->search();
         }
 
-        if (cont == 3)
+        if (actionNumber == 3)
         {
             obj->remove_w();
         }
 
-        if (cont == 4)
+        if (actionNumber == 4)
         {
             obj->edit();
         }
 
-        if (cont == 5)
+        if (actionNumber == 5)
         {
             obj->display();
         }
 
-        if (cont == 6)
+        if (actionNumber == 6)
         {
             go = false;
             delete obj;
