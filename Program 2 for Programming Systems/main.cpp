@@ -30,7 +30,7 @@ int main(){
         }
 
         if(cont == 3){
-            obj->remove_w();
+            obj->remove();
         }
 
         if(cont == 4){
