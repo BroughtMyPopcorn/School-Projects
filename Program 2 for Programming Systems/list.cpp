@@ -22,18 +22,22 @@ list::~list(){
 
 //inserts the data into a doubly linked list
 void list::insert(int choice){
-    if (!head_) {
-        head_ = new node;
-        head_->setData(choice);
-        head_->setNext(NULL);
-        head_->setPrev(NULL);
+    //    cout<<"hiiii"<<endl;
+    //if there's not a list already, initialize one 
+    if(!head){
+        head = new node;
+        head->setQuestion(choice);
+        head->setNext(NULL);
+        head->setPrev(NULL);
     }
-    else {
-        node * temp = head_;
-        head_ = new node;
-        head_->setData(choice);
-        head_->setNext(temp);
-        temp->setPrev(head_);
+    //add the node into the list
+    else{
+        node * temp = head;
+        head = new node;
+        head->setQuestion(choice);
+        head->setNext(temp);
+        temp->setPrev(head);
+        // temp->setNext(NULL);
         return;
     }
 }
@@ -42,8 +46,20 @@ int list::deleteItem(int del){
     return deleteItem(head_, del);
 }
 
-int list::deleteItem(node*& head_, int del){
-    if (!head_) {
+int list::delete_item(node*& head, int del){
+
+    if(!head) return 1;
+    /* table* ptr;
+       int del = ptr->getdel();
+       */
+    if(head->getQuestionData()->getReference() == del){
+        node* temp = head->getNext();
+        node* temp2 = head->getPrev();
+        delete head;
+        head = temp;
+        if(head){
+            head->getPrev() = temp2;
+        }
         return 1;
     }
     if (head_->getData()->getReference() == del) {
@@ -73,9 +89,7 @@ void list::display(node* head_){
     if (!head_) {
         return;
     }
-
-    head_->display();        // calls node display
-
+    head->displayQuestions();        // calls node display
     return display(head_->getNext());
 }
 
@@ -83,12 +97,15 @@ void list::search(int ref){
     traverse(head_, ref);
 }
 
-int list::traverse(node* head_, int ref){
-    if (!head_)  {
-        return 0;
-    }
-    if (head_->getData()->getReference() == ref) {
-        head_->display();
+int list::traverse(node* head, int ref){
+
+    if(!head) return 0;
+    /*
+       table* ptr;
+       int ref = ptr->getref();
+       */
+    if(head->getQuestionData()->getReference()== ref){
+        head->displayQuestions();
         return 1;
     }
 
