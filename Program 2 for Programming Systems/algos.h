@@ -13,6 +13,6 @@ class algos: public questions
         algos(int new_subject, char* new_info, char* new_ds, int new_difficulty, char* new_bigO, int new_reference); //copies for new data members
         virtual void display();
         void readin();
-    protected:
-        char* bigO; //char * for algorithm questions
+    private:
+        char* big_o_; //char * for algorithm questions
 };

@@ -30,7 +30,7 @@ void table::display() {
     cout<<"Enter 3 for algorithms"<<endl;
     cin>>pick;
     cin.ignore(100, '\n');
-
+  
     if(pick == 1 && index[0]) {
         index[0]->display();
     }
@@ -71,6 +71,7 @@ int table::search() {
     }
     return found; //success is 0, failure is 1
 }
+
 
 int table::remove() {
     int del;

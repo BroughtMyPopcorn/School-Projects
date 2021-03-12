@@ -1,29 +1,27 @@
 #include "table.h"
 #include "questions.h"
 
+/* 
+Author: Nelson Wong
+This file contains the functions for the list class
+*/
+
 list::list(){
-
-    head = NULL;
-    //ref = 0;
-
+    head_ = NULL;
 }
 
 list::~list(){
-
-    node* temp = head;
-    if(head){
-        while(head){
-            temp = temp->getNext();
-            delete head;
-            head = temp;
-        }
+    node* temp = head_;
+    while (head_) {
+        temp = temp->getNext();
+        delete head_;
+        head_ = temp;
     }
 }
 
 
 //inserts the data into a doubly linked list
 void list::insert(int choice){
-
     //    cout<<"hiiii"<<endl;
     //if there's not a list already, initialize one 
     if(!head){
@@ -42,12 +40,10 @@ void list::insert(int choice){
         // temp->setNext(NULL);
         return;
     }
-
-
 }
 
-int list::delete_item(int del){
-    return delete_item(head, del);
+int list::deleteItem(int del){
+    return deleteItem(head_, del);
 }
 
 int list::delete_item(node*& head, int del){
@@ -66,27 +62,39 @@ int list::delete_item(node*& head, int del){
         }
         return 1;
     }
-    return delete_item(head->getNext(), del);
+    if (head_->getData()->getReference() == del) {
 
+        node* temp = head_->getNext();
+        node* temp2 = head_->getPrev();
+        delete head_;
+        head_ = temp;
+
+        if (head_) {
+            head_->getPrev() = temp2;
+        }
+        return 1;
+    }
+    return deleteItem(head_->getNext(), del);
 }
 
 void list::display(){
-    if(!head) return;
+    if (!head_) {
+        return;
+    }
 
-    display(head);
+    display(head_);
 }
 
-void list::display(node* head){
-    if(!head) return;
-
+void list::display(node* head_){
+    if (!head_) {
+        return;
+    }
     head->displayQuestions();        // calls node display
-
-    return display(head->getNext());
+    return display(head_->getNext());
 }
 
 void list::search(int ref){
-
-    traverse(head, ref);
+    traverse(head_, ref);
 }
 
 int list::traverse(node* head, int ref){
@@ -101,20 +109,5 @@ int list::traverse(node* head, int ref){
         return 1;
     }
 
-    return traverse(head->getNext(), ref);
-
+    return traverse(head_->getNext(), ref);
 }
-
-/*
-   int list::remove(){
-   if(!head) return 0;
-
-   return remove(head);
-
-   }
-
-   int list::remove(node* head){
-
-
-   }
-   */
