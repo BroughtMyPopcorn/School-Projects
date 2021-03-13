@@ -82,7 +82,7 @@ int table::remove() {
 
     for(int i = 0; i<NUM;i++) {
         if(index[i]) {
-            deleted = index[i]->delete_item(del); //catch result
+            deleted = index[i]->deleteItem(del); //catch result
         }
     }
     return deleted; //success is 0, failure is 1
@@ -97,7 +97,7 @@ int table::edit() {
     for(int i = 0; i<NUM;i++) {
         if(index[i]) {
             index[i]->search(toedit);
-            int match = index[i]->delete_item(toedit);
+            int match = index[i]->deleteItem(toedit);
             if(match == 1) {
                 pick();
                 edited = 0;

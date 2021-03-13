@@ -1,6 +1,16 @@
 #include "node.h"
 #include "algos.h"
 
+/* 
+Author: Nelson Wong
+
+The algos class is a class which primarily handles storing the
+questions involving algorithms, which includes information
+about an algorithm's Big O. This class inherits data members
+and functions form the questions class.
+
+*/
+
 algos::algos() {
     big_o_ = NULL;
 }
@@ -23,39 +33,40 @@ algos::~algos() {
     }
 }
 
+// Displays the question
 void algos::display() const {
-    cout << "For algorithms" << endl;
-    cout << "The question is: " << info << endl;
-    cout << "The data structure: "<< ds << endl;
-    cout << "The difficulty /5 is: " << difficulty << endl;
-    cout << "The big O is" << big_o_ << endl;
-    cout << "The reference number is: " << reference << endl;
+    std::cout << "For algorithms" << endl;
+    std::cout << "The question is: " << info << endl;
+    std::cout << "The data structure: "<< ds << endl;
+    std::cout << "The difficulty /5 is: " << difficulty << endl;
+    std::cout << "The big O is" << big_o_ << endl;
+    std::cout << "The reference number is: " << reference << endl;
 }
-
-
+// Reads in information from the user
 void algos::readin() {
-    cout << "The subject is algorithms" << endl;
-    cout << "Enter a number to associate the question with" << endl;
-    cin >> reference;
-    cin.ignore();
-
-    cout << "Enter the question" << endl;
     info = new char[1000];
-    cin.get(info,1000, '\n');
-    cin.ignore(1000,'\n');
-
-    cout << "Enter the data structure that would work the best" << endl;
     ds = new char[1000];
-    cin.get(ds, 1000, '\n');
-    cin.ignore(1000, '\n');
-
-    cout << "Enter in the diffculty out of 5" << endl;
-    cin >> difficulty;
-    cin.ignore();
-
-    cout << "What is the big O for this algo?" << endl;
     big_o_ = new char[1000];
-    cin.get(big_o_,1000, '\n');
-    cin.ignore(1000, '\n');
+
+    std::cout << "The subject is algorithms" << endl;
+    std::cout << "Enter a number to associate the question with" << endl;
+    std::cin >> reference;
+    std::cin.ignore();
+
+    std::cout << "Enter the question" << endl;
+    std::cin.get(info,1000, '\n');
+    std::cin.ignore(1000,'\n');
+
+    std::cout << "Enter the data structure that would work the best" << endl;
+    std::cin.get(ds, 1000, '\n');
+    std::cin.ignore(1000, '\n');
+
+    std::cout << "Enter in the diffculty out of 5" << endl;
+    std::cin >> difficulty;
+    std::cin.ignore();
+
+    std::cout << "What is the big O for this algo?" << endl;
+    std::cin.get(big_o_,1000, '\n');
+    std::cin.ignore(1000, '\n');
 }
 
