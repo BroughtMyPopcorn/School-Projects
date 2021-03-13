@@ -6,11 +6,11 @@ Author: Nelson Wong
 This file contains the functions for the list class
 */
 
-list::list(){
+list::list() {
     head_ = NULL;
 }
 
-list::~list(){
+list::~list() {
     node* temp = head_;
     while (head_) {
         temp = temp->getNext();
@@ -22,62 +22,48 @@ list::~list(){
 
 //inserts the data into a doubly linked list
 void list::insert(int choice){
-    //    cout<<"hiiii"<<endl;
     //if there's not a list already, initialize one 
-    if(!head){
-        head = new node;
-        head->setQuestion(choice);
-        head->setNext(NULL);
-        head->setPrev(NULL);
+    if(!head_) {
+        head_ = new node;
+        head_->setQuestion(choice);
+        head_->setNext(NULL);
+        head_->setPrev(NULL);
     }
     //add the node into the list
-    else{
-        node * temp = head;
-        head = new node;
-        head->setQuestion(choice);
-        head->setNext(temp);
-        temp->setPrev(head);
-        // temp->setNext(NULL);
+    else {
+        node * temp = head_;
+        head_ = new node;
+        head_->setQuestion(choice);
+        head_->setNext(temp);
+        temp->setPrev(head_);
         return;
     }
 }
 
-int list::deleteItem(int del){
-    return deleteItem(head_, del);
+int list::delete_item(int del){
+    return delete_item(head_, del);
 }
 
-int list::delete_item(node*& head, int del){
+int list::delete_item(node*& head_, int del){
 
-    if(!head) return 1;
-    /* table* ptr;
-       int del = ptr->getdel();
-       */
-    if(head->getQuestionData()->getReference() == del){
-        node* temp = head->getNext();
-        node* temp2 = head->getPrev();
-        delete head;
-        head = temp;
-        if(head){
-            head->getPrev() = temp2;
-        }
+    if(!head_) { 
         return 1;
     }
-    if (head_->getData()->getReference() == del) {
 
+    if(head_->getQuestionData()->getReference() == del) {
         node* temp = head_->getNext();
         node* temp2 = head_->getPrev();
         delete head_;
         head_ = temp;
-
-        if (head_) {
+        if(head_){
             head_->getPrev() = temp2;
         }
         return 1;
     }
-    return deleteItem(head_->getNext(), del);
+    return delete_item(head_->getNext(), del);
 }
 
-void list::display(){
+void list::display() {
     if (!head_) {
         return;
     }
@@ -85,27 +71,25 @@ void list::display(){
     display(head_);
 }
 
-void list::display(node* head_){
+void list::display(node* head_) {
     if (!head_) {
         return;
     }
-    head->displayQuestions();        // calls node display
+    head_->displayQuestions();        // calls node display
     return display(head_->getNext());
 }
 
-void list::search(int ref){
-    traverse(head_, ref);
+int list::search(int ref){
+    return traverse(head_, ref);
 }
 
-int list::traverse(node* head, int ref){
+int list::traverse(node* head_, int ref) {
 
-    if(!head) return 0;
-    /*
-       table* ptr;
-       int ref = ptr->getref();
-       */
-    if(head->getQuestionData()->getReference()== ref){
-        head->displayQuestions();
+    if(!head_) {
+        return 0;
+    }
+    if(head_->getQuestionData()->getReference() == ref) {
+        head_->displayQuestions();
         return 1;
     }
 
