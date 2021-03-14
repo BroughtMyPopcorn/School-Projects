@@ -14,8 +14,8 @@ class parallel: public questions
         parallel(const parallel & src); // copies into a new obj
         parallel(int new_subject, char* new_info, char* new_ds, int new_difficulty, int new_cores, int new_reference); 
         void display() const override;         // Override the display function from parent class
-        void readin() override;
+        void readIn() override;
 
     private:
-        int cores; //user inserts how many cores are used 
+        int cores_; //user inserts how many cores are used
 };

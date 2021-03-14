@@ -1,5 +1,5 @@
 /*
- *This high.h file is for the classes for the functions for the array and the linked list manipulation
+ *This table.h file is the top-level DS and holds a list for each question type.
  *
  */
 
@@ -20,8 +20,7 @@ class table
         int remove(); //searches lists for reference number to remove
         int edit(); //searches lists for reference number to replace
     private:
-        class list** index; //double ptr to dynamically allocate the array
-        int arrIndex; //index traverser for arr
+        class list** index_; //double ptr to dynamically allocate the array
 };
 
 

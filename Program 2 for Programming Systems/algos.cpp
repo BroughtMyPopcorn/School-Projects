@@ -36,33 +36,33 @@ algos::~algos() {
 // Displays the question
 void algos::display() const {
     std::cout << "For algorithms" << endl;
-    std::cout << "The question is: " << info << endl;
-    std::cout << "The data structure: "<< ds << endl;
-    std::cout << "The difficulty /5 is: " << difficulty << endl;
+    std::cout << "The question is: " << info_ << endl;
+    std::cout << "The data structure: "<< data_structure_ << endl;
+    std::cout << "The difficulty /5 is: " << difficulty_ << endl;
     std::cout << "The big O is" << big_o_ << endl;
-    std::cout << "The reference number is: " << reference << endl;
+    std::cout << "The reference number is: " << reference_ << endl;
 }
 // Reads in information from the user
-void algos::readin() {
-    info = new char[1000];
-    ds = new char[1000];
+void algos::readIn() {
+    info_ = new char[1000];
+    data_structure_ = new char[1000];
     big_o_ = new char[1000];
 
     std::cout << "The subject is algorithms" << endl;
     std::cout << "Enter a number to associate the question with" << endl;
-    std::cin >> reference;
+    std::cin >> reference_;
     std::cin.ignore();
 
     std::cout << "Enter the question" << endl;
-    std::cin.get(info,1000, '\n');
+    std::cin.get(info_,1000, '\n');
     std::cin.ignore(1000,'\n');
 
     std::cout << "Enter the data structure that would work the best" << endl;
-    std::cin.get(ds, 1000, '\n');
+    std::cin.get(data_structure_, 1000, '\n');
     std::cin.ignore(1000, '\n');
 
     std::cout << "Enter in the diffculty out of 5" << endl;
-    std::cin >> difficulty;
+    std::cin >> difficulty_;
     std::cin.ignore();
 
     std::cout << "What is the big O for this algo?" << endl;

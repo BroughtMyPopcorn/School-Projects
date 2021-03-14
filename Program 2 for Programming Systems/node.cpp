@@ -77,7 +77,7 @@ questions *node::getQuestionData()
 void node::displayQuestions()
 {
 
-    data->display();
+    data -> display();
 }
 void node::setQuestion(int choice)
 {
@@ -85,17 +85,17 @@ void node::setQuestion(int choice)
     if (choice == 1)
     {
         data = new parallel;
-        data->readin();
+        data -> readIn();
     }
 
     if (choice == 2)
     {
         data = new threads;
-        data->readin();
+        data -> readIn();
     }
     if (choice == 3)
     {
         data = new algos;
-        data->readin();
+        data -> readIn();
     }
 }
