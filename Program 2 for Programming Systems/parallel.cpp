@@ -1,53 +1,55 @@
 #include "node.h"
 #include "parallel.h"
 
+/* Default Constructor */
 parallel::parallel() {
     cores_ = 0;
 }
 
+/* Class Destructor */
 parallel::~parallel() {}
 
-//copy constructor
+/* Copy Constructor */
 parallel::parallel(const parallel & src) {
     cores_ = src.cores_;
 }
 
-/* Fully utilize the initialization list */
+/* Constructor with arguments */
 parallel::parallel(int new_subject, char* new_info, char* new_ds, int new_difficulty, int new_cores, int new_reference): 
     questions(new_subject, new_info, new_ds, new_difficulty, new_reference), cores_(new_cores) {}
 
 /* Displaying the data members of the class */
 void parallel::display() const {
-    cout << "For parallel programming" << endl;
-    cout << "The question is: " << info_ << endl;
-    cout << "The data structure: " << data_structure_ << endl;
-    cout << "The difficulty /5 is: " << difficulty_ << endl;
-    cout << "It has " << cores_ << " cores" << endl;
-    cout << "The reference number is: " << reference_ << endl;
+    std::cout << "For parallel programming" << std::endl;
+    std::cout << "The question is: " << info_ << std::endl;
+    std::cout << "The data structure: " << data_structure_ << std::endl;
+    std::cout << "The difficulty /5 is: " << difficulty_ << std::endl;
+    std::cout << "It has " << cores_ << " cores" << std::endl;
+    std::cout << "The reference number is: " << reference_ << std::endl;
 }
 
 /* Read in data for the data members of the class */
 void parallel::readIn() {
-    cout << "The subject is parallel programming" << endl;
-    cout << "Enter a number to associate the question with" << endl;
-    cin >> reference_;
-    cin.ignore();
+    std::cout << "The subject is parallel programming" << std::endl;
+    std::cout << "Enter a number to associate the question with" << std::endl;
+    std::cin >> reference_;
+    std::cin.ignore();
 
-    cout << "Enter the question" << endl;
+    std::cout << "Enter the question" << std::endl;
     info_ = new char[1000];
-    cin.get(info_, 1000, '\n');
-    cin.ignore(1000,'\n');
+    std::cin.get(info_, 1000, '\n');
+    std::cin.ignore(1000,'\n');
 
-    cout << "Enter the data structure that would work the best" << endl;
+    std::cout << "Enter the data structure that would work the best" << std::endl;
     data_structure_ = new char[1000];
-    cin.get(data_structure_, 1000, '\n');
-    cin.ignore(1000, '\n');
+    std::cin.get(data_structure_, 1000, '\n');
+    std::cin.ignore(1000, '\n');
 
-    cout << "Enter in the difficulty out of 5" << endl;
-    cin >> difficulty_;
-    cin.ignore();       // Added in the safety measure for cin
+    std::cout << "Enter in the difficulty out of 5" << std::endl;
+    std::cin >> difficulty_;
+    std::cin.ignore();       
 
-    cout << "How many cores does it have" << endl;
-    cin >> cores_;
-    cin.ignore();       // Added in the safety measure for cin
+    std::cout << "How many cores does it have" << std::endl;
+    std::cin >> cores_;
+    std::cin.ignore();       
 }

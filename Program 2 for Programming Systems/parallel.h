@@ -8,14 +8,14 @@
     to the concept of parallel programming */
 class parallel: public questions
 {
-    public:
-        parallel();     
-        ~parallel();
-        parallel(const parallel & src); // copies into a new obj
-        parallel(int new_subject, char* new_info, char* new_ds, int new_difficulty, int new_cores, int new_reference); 
-        void display() const override;         // Override the display function from parent class
-        void readIn() override;
+public:
+    parallel();
+    ~parallel();
+    parallel(const parallel &src); 
+    parallel(int new_subject, char *new_info, char *new_ds, int new_difficulty, int new_cores, int new_reference);
+    void display() const override; // Override the display function from parent class
+    void readIn() override;
 
-    private:
-        int cores_; //user inserts how many cores are used
+private:
+    int cores_; 
 };

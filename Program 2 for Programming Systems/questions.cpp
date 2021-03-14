@@ -1,7 +1,7 @@
 #include "node.h"
 #include "questions.h"
 
-//constructor for base class
+/* Default Constructor */
 questions::questions() {
     subject_ = 0;
     info_ = NULL;
@@ -10,13 +10,13 @@ questions::questions() {
     reference_ = 0;
 }
 
-//destructor 
+/* Class Destructor */
 questions::~questions() {
     if (info_) { delete [] info_; }
     if (data_structure_) { delete [] data_structure_; }
 }
 
-//copy constructor when inserting the data into a node
+/* Copy Constructor */
 questions::questions(const questions & src) {
     subject_ = src.subject_;
     info_ = new char [strlen(src.info_)+1];
@@ -27,17 +27,17 @@ questions::questions(const questions & src) {
     reference_ = src.reference_;
 }
 
-//copy constructor when aggregating new data
+/* Constructor with arguments */
 questions::questions(int new_subject, char* new_info, char* new_ds, int new_difficulty, int new_reference) {
     subject_ = new_subject;
     info_ = new char [strlen(new_info)+1];
     strncpy(info_, new_info, strlen(info_));
     data_structure_ = new char [strlen(new_ds)+1];
-    strncpy(data_structure_, new_ds, strlen(data_structure_));                     //Tu added in this part
+    strncpy(data_structure_, new_ds, strlen(data_structure_));                     
     difficulty_ = new_difficulty;
     reference_ = new_reference;
 }
-
+ /* Getter function that return the data member reference */
 int questions::getReference() {
     return reference_;
 }
