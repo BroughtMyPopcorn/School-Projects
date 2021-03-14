@@ -18,8 +18,9 @@ public:
     void editQuestion();                //allows user to edit the list
     class questions *getQuestionData(); //gets the ptr to question
     void displayQuestions();            //calls questions' display
-protected:
-    node *next;
-    node *prev;
-    class questions *data;
+
+    private:
+    node *next_;
+    node *prev_;
+    class questions *data_;
 };
