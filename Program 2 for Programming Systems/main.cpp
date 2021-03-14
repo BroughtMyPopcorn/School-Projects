@@ -9,42 +9,43 @@ The rtti is in the node constructor, dynamic binding in for insert
 
 int main() {
     bool go = true;
-    int cont = 0;
+    int actionNumber = 0;
     int result = 0;
     table * obj = new table;
     do {
-        cout << "Enter 1 to insert a new question" << endl;
-        cout << "Enter 2 to search for an item" << endl;
-        cout << "Enter 3 to remove a question" << endl;
-        cout << "Enter 4 to edit a question" << endl;
-        cout << "Enter 5 to display questions" << endl;
-        cout << "Enter 6 to end the program" << endl;
-        cin >> cont;
-        cin.ignore();
+       std::cout << "Enter the corresponding number for the action" << std::endl;
+        std::cout << "1 to insert new question" << std::endl;
+        std::cout << "2 to search for an item" << std::endl;
+        std::cout << "3 to remove a question" << std::endl;
+        std::cout << "4 to edit a question" << std::endl;
+        std::cout << "5 to display questions" << std::endl;
+        std::cout << "6 to end the program" << std::endl;
+        std::cin >> actionNumber;
+        std::cin.ignore();
 
-        if(cont == 1) {
+        if(actionNumber == 1) {
             obj -> pick();
             result = 0;
         }
 
-        if(cont == 2) {
+        if(actionNumber == 2) {
             result = obj -> search();
         }
 
-        if(cont == 3) {
+        if(actionNumber == 3) {
             result = obj -> remove();
         }
 
-        if(cont == 4) {
+        if(actionNumber == 4) {
             result = obj -> edit();
          }
 
-        if(cont == 5) {
+        if(actionNumber == 5) {
             obj -> display();
             result = 0;
         }
 
-        if(cont == 6) {
+        if(actionNumber == 6) {
             go = false;
             delete obj;
             result = 0;
