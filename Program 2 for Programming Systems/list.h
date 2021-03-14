@@ -12,13 +12,13 @@ class list
     public:
         list();
         ~list();
-        void display(); //wrapper for display funct
+        void display(); // Wrapper for display funct
         void insert(int);
-        int search(int ref); //search function 
+        int search(int ref); // Search function 
         int deleteItem(int del);
 
     private:
-        node* head_; //contains a node for insertion
+        node* head_; // Contains a node for insertion
 
         int deleteItem(node*& head_, int del);
         void display(node* head_);
