@@ -3,7 +3,9 @@
 
 /* 
 Author: Nelson Wong
-This file contains the functions for the list class
+
+This file contains the functions for the list class, whose primary
+function is to manage the insertion of nodes
 */
 
 list::list() {
@@ -11,7 +13,7 @@ list::list() {
 }
 
 list::~list() {
-    node* temp = head_;
+    node * temp = head_;
     while (head_) {
         temp = temp->getNext();
         delete head_;
@@ -21,7 +23,7 @@ list::~list() {
 
 
 //inserts the data into a doubly linked list
-void list::insert(int choice){
+void list::insert(int choice) {
     //if there's not a list already, initialize one 
     if(!head_) {
         head_ = new node;
@@ -40,17 +42,19 @@ void list::insert(int choice){
     }
 }
 
-int list::delete_item(int del){
-    return delete_item(head_, del);
+// Wrapper function for deleting an item
+int list::deleteItem(int del){
+    return deleteItem(head_, del);
 }
 
-int list::delete_item(node*& head_, int del){
+// Functon that deletes a node from the list
+int list::deleteItem(node*& head_, int del) {
 
-    if(!head_) { 
+    if (!head_) { 
         return 1;
     }
 
-    if(head_->getQuestionData()->getReference() == del) {
+    if (head_->getQuestionData()->getReference() == del) {
         node* temp = head_->getNext();
         node* temp2 = head_->getPrev();
         delete head_;
@@ -60,9 +64,10 @@ int list::delete_item(node*& head_, int del){
         }
         return 1;
     }
-    return delete_item(head_->getNext(), del);
+    return deleteItem(head_->getNext(), del);
 }
 
+// Wrapper for display
 void list::display() {
     if (!head_) {
         return;
@@ -71,6 +76,7 @@ void list::display() {
     display(head_);
 }
 
+// Function that runs the display functions for the children of questions
 void list::display(node* head_) {
     if (!head_) {
         return;
@@ -79,16 +85,17 @@ void list::display(node* head_) {
     return display(head_->getNext());
 }
 
-int list::search(int ref){
+// Wrapper for the traverse function
+int list::search(int ref) {
     return traverse(head_, ref);
 }
 
+// Function that searches for a specific question using an id
 int list::traverse(node* head_, int ref) {
-
-    if(!head_) {
+    if (!head_) {
         return 0;
     }
-    if(head_->getQuestionData()->getReference() == ref) {
+    if (head_->getQuestionData()->getReference() == ref) {
         head_->displayQuestions();
         return 1;
     }
