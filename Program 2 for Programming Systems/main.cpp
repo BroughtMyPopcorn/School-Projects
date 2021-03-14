@@ -52,7 +52,7 @@ int main() {
         }
 
         if (result != 0) {
-            cout << "That reference number is invalid." << endl;
+            std::cout << "That reference number is invalid." << std::endl;
         }
 
     } while (go == true);
