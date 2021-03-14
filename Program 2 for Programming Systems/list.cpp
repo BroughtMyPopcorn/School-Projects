@@ -22,16 +22,16 @@ list::~list() {
 }
 
 
-//inserts the data into a doubly linked list
+/* Inserts the data into a doubly linked list */
 void list::insert(int choice) {
-    //if there's not a list already, initialize one 
+    // If there's not a list already, initialize one 
     if(!head_) {
         head_ = new node;
         head_ -> setQuestion(choice);
         head_ -> setNext(NULL);
         head_ -> setPrev(NULL);
     }
-    //add the node into the list
+    // Add the node into the list
     else {
         node * temp = head_;
         head_ = new node;
@@ -42,12 +42,12 @@ void list::insert(int choice) {
     }
 }
 
-// Wrapper function for deleting an item
+/* Wrapper function for deleting an item */
 int list::deleteItem(int del) {
     return deleteItem(head_, del);
 }
 
-// Function that deletes a node from the list
+/* Function that deletes a node from the list */
 int list::deleteItem(node*& head_, int del) {
 
     if (!head_) { 
@@ -67,7 +67,7 @@ int list::deleteItem(node*& head_, int del) {
     return deleteItem(head_ -> getNext(), del);
 }
 
-// Wrapper for display
+/* Wrapper for display */
 void list::display() {
     if (!head_) {
         return;
@@ -76,7 +76,7 @@ void list::display() {
     display(head_);
 }
 
-// Function that runs the display functions for the children of questions
+/* Function that runs the display functions for the children of questions */
 void list::display(node* head_) {
     if (!head_) {
         return;
@@ -85,12 +85,12 @@ void list::display(node* head_) {
     return display(head_ -> getNext());
 }
 
-// Wrapper for the traverse function
+/* Wrapper for the traverse function */
 int list::search(int ref) {
     return traverse(head_, ref);
 }
 
-// Function that searches for a specific question using an id
+/* Function that searches for a specific question using an id */
 int list::traverse(node* head_, int ref) {
     if (!head_) {
         return 1;
